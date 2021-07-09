@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="ID"></h:outputLabel>
+                <h:outputText value="#{managedPedido.pedid.idpedido}"></h:outputText>
+                
+                <h:outputLabel value="Cliente"></h:outputLabel>
+                <h:selectOneMenu value="#{managedPedido.cli.dnicli}">
+                    <f:selectItems value="#{managedCliente.listaCliente}" var="a"
+                                   itemLabel="#{a.nombrecli}" itemValue="#{a.dnicli}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Detalle"></h:outputLabel>
+                <h:selectOneMenu value="#{managedPedido.detallePedido.iddetallepe}">
+                    <f:selectItems value="#{managedDetallePedido.listDetalle}" var="b"
+                                   itemLabel="#{b.iddetallepe}" itemValue="#{b.iddetallepe}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Estado"></h:outputLabel>
+                <h:selectOneMenu value="#{managedPedido.estadoPedido.idestadope}">
+                    <f:selectItems value="#{managedEstadoPedido.listEstadoPedido}" var="c"
+                                   itemLabel="#{c.nomestadope}" itemValue="#{c.idestadope}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Categoria Pago"></h:outputLabel>
+                <h:selectOneMenu value="#{managedPedido.catPago.idcatpago}">
+                    <f:selectItems value="#{managedCategoriaPago.listCatPago}" var="d"
+                                   itemLabel="#{d.nomcatpago}" itemValue="#{d.idcatpago}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Tipo de Pago"></h:outputLabel>
+                <h:selectOneMenu value="#{managedPedido.tipoPago.idpg}">
+                    <f:selectItems value="#{managedTipoPago.listTipoPago}" var="e"
+                                   itemLabel="#{e.nombrepg}" itemValue="#{e.idpg}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Fecha del pedido"></h:outputLabel>
+                <h:inputText value="#{managedPedido.pedid.fechapedi}"></h:inputText>
+                
+                <h:commandButton value="Actualizar" action="listar" actionListener="#{managedPedido.guardar()}"></h:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

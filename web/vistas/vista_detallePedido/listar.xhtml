@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{managedDetallePedido.listDetalle}" var="lis">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="NRO"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.iddetallepe}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Producto"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.idproductodetallepe.nombrepro}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Precio Unitario"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.idproductodetallepe.preciopro}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cantidad"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.cantidaddetellepe}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Costo"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.totaldetallepe}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Eliminar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Eliminar" actionListener="#{managedDetallePedido.eliminar(lis)}"></h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Modificar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Modificar" action="editar" actionListener="#{managedDetallePedido.cargarDatos(lis)}"></h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

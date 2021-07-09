@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="ID"></h:outputLabel>
+                <h:outputText value="#{managedSubCatPro.subCatPro.idSub}"></h:outputText>
+                
+                <h:outputLabel value="Categoria"></h:outputLabel>
+                <h:selectOneMenu value="#{managedSubCatPro.catPro.idcatpro}">
+                    <f:selectItems value="#{managedCategoriaProducto.listCatPro}" var="a"
+                                   itemLabel="#{a.nombreCat}" itemValue="#{a.idcatpro}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Nombre"></h:outputLabel>
+                <h:inputText value="#{managedSubCatPro.subCatPro.nombreSub}"></h:inputText>
+                
+                <h:commandButton value="Actualizar" action="listar" actionListener="#{managedSubCatPro.modificar()}"></h:commandButton>
+            </h:panelGrid>
+            <h:link outcome="/index" value="Regresar a principal"></h:link><br></br>
+            <h:link outcome="listar" value="Listar SubCategorias"></h:link><br></br>
+        </h:form>
+    </h:body>
+</html>
+

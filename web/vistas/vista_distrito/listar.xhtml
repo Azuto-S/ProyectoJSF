@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{managedDistrito.listarDistrito}" var="dis">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{dis.idDistrito}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{dis.nomDis}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Costo Envio"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{dis.costoenvio}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Eliminar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Eliminar" actionListener="#{managedDistrito.eliminar(dis)}"></h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Modificar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Modificar" action="editar" actionListener="#{managedDistrito.cargarDatos(dis)}"></h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>

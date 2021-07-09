@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="DNI"></h:outputLabel>
+                <h:outputText value="#{managedTrabajador.traba.idtra}"></h:outputText>
+                
+                <h:outputLabel value="Tipo de Trabajador"></h:outputLabel>
+                <h:selectOneMenu value="#{managedTrabajador.tipoTra.idtipotra}">
+                    <f:selectItems value="#{managedTipotrabajador.lisTipo}" var="a"
+                                   itemLabel="#{a.nomtipotra}" itemValue="#{a.idtipotra}"></f:selectItems>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Nombre"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.nombretra}"></h:inputText>
+                
+                <h:outputLabel value="Apellido Paterno"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.apePaternotra}"></h:inputText>
+                
+                <h:outputLabel value="Apellido Materno"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.apeMaternotra}"></h:inputText>
+                
+                <h:outputLabel value="Genero"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.sexotra}"></h:inputText>
+                
+                <h:outputLabel value="Telefono"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.telefonotra}"></h:inputText>
+                
+                <h:outputLabel value="Direccion"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.direcciontra}"></h:inputText>
+                
+                <h:outputLabel value="Correo"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.correotra}"></h:inputText>
+                
+                <h:outputLabel value="Contraseña"></h:outputLabel>
+                <h:inputText value="#{managedTrabajador.traba.contrasenatra}"></h:inputText>
+                
+                <h:commandButton value="Actualizar" action="listar" actionListener="#{managedTrabajador.modificar()}"></h:commandButton>
+            </h:panelGrid>
+            <h:link outcome="/index" value="Regresar a principal"></h:link><br></br>
+            <h:link outcome="listar" value="Listar Trabajadores"></h:link><br></br>
+        </h:form>
+    </h:body>
+</html>
+

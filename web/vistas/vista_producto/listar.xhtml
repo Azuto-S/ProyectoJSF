@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{managedProducto.listaPro}" var="lis">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.idpro}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="SubCategoria"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.idSubcategoria.nombreSub}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.nombrepro}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Precio"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.preciopro}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Stock Actual"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.stockpro}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="imagen"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.imagen}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Eliminar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Eliminar" actionListener="#{managedProducto.eliminar(lis)}"></h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Modificar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Modificar" action="editar" actionListener="#{managedProducto.cargarDatos(lis)}"></h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>

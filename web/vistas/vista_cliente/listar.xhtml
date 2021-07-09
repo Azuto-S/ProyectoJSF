@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{managedCliente.listaCliente}" var="lis">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="DNI"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.dnicli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.nombrecli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="A. Paterno"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.apePaternocli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="A. Materno"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.apeMaternocli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Genero"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.sexocli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Telefono"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.telefonocli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Correo"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.correocli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Contraseña"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.contrasenacli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Distrito"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.idDistritocli.nomDis}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Referencia"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{lis.referenciacli}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Eliminar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Eliminar" actionListener="#{managedCliente.eliminar(lis)}"></h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Modificar"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Modificar" action="editar" actionListener="#{managedCliente.cargarDatos(lis)}"></h:commandButton>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
